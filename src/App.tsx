@@ -34,7 +34,7 @@ function App() {
   }, [displayState.timerRunning]);
 
   useEffect(() => {
-    if (displayState.time === 0) {
+    if (displayState.time < 0) {
       const audio = document.getElementById("beep") as HTMLAudioElement;
       audio.currentTime = 2;
       audio.play().catch((err) => console.log(err));
